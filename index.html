@@ -136,6 +136,29 @@
     }
 
     .timer-triggers { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+
+    /* Griglia a 2 colonne disposte in colonna (1,2,3 a sx | 4,5,6 a dx) */
+    .warmup-timer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(3, auto);
+      grid-auto-flow: column;
+      gap: 8px 10px;
+      margin-top: 14px;
+      width: 100%;
+    }
+
+    .warmup-timer-grid .btn-timer {
+      width: 100%;
+      box-sizing: border-box;
+      justify-content: flex-start;
+      padding: 10px 8px;
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
     .btn-timer {
       background: #334155;
       color: var(--text);
@@ -234,10 +257,22 @@ const program = [
     title: "🟢 Giorno 1: Reattività della Caviglia & Forza Eccentrica",
     goal: "Insegnare ai tuoi tendini ad assorbire l'energia dell'atterraggio per spararti subito verso l'alto (fondamentale per le transizioni muro-attacco).",
     warmup: {
-      text: "5 minuti di mobilità per anche e spalle + 2 minuti di skip basso a piedi nudi.",
+      text: `<strong>Routine Mobilità Dinamica (5 min) + Skip (2 min):</strong>
+      <ol style="margin-top:8px; margin-bottom:8px; padding-left:20px;">
+        <li><strong>Cat-Cow + Allungo dorsale</strong> (60s): mobilità torace, spalle e bacino.</li>
+        <li><strong>90/90 con rotazione</strong> (60s): 30s per lato per mobilità interna/esterna anche.</li>
+        <li><strong>Thread the Needle</strong> (60s): 30s per lato per torace e scapole.</li>
+        <li><strong>World's Greatest Stretch</strong> (60s): affondo profondo + rotazione del braccio.</li>
+        <li><strong>Prone Y-to-W</strong> (60s): apertura spalle e attivazione scapolare a pancia in giù.</li>
+        <li><strong>Skip basso a piedi nudi</strong> (2 min): reattività del piede ed elasticità caviglie.</li>
+      </ol>`,
       timers: [
-        { sec: 300, label: "Mobilità (5 min)", type: "work" },
-        { sec: 120, label: "Skip basso (2 min)", type: "work" }
+        { sec: 60, label: "1. Cat-Cow", type: "work" },
+        { sec: 60, label: "2. 90/90 Anche", type: "work" },
+        { sec: 60, label: "3. Thread Needle", type: "work" },
+        { sec: 60, label: "4. W.G. Stretch", type: "work" },
+        { sec: 60, label: "5. Prone Y_to_W", type: "work" },
+        { sec: 120, label:"6. Skip Basso", type: "work" }
       ]
     },
     exercises: [
@@ -283,9 +318,22 @@ const program = [
     title: "🔵 Giorno 2: Forza Concentrica & Massima Potenza da Fermo",
     goal: "Allena il \"salto da muro\": generare la massima spinta verticale partendo da una posizione statica, senza rincorsa.",
     warmup: {
-      text: "5 minuti di squat a corpo libero e slanci delle gambe.",
+      text: `<strong>Attivazione Concentrica, Catena Posteriore & Glutei (5 min):</strong>
+      <ol style="margin-top:8px; margin-bottom:8px; padding-left:20px;">
+        <li><strong>Air Squat con pausa in buca</strong> (50s): discesa lenta, stop di 2s in basso per aprire il bacino e risalita dinamica.</li>
+        <li><strong>Glute Bridge bipodalico + isometria</strong> (50s): spinta sui talloni, contrazione di 2s del gluteo in cima per attivare l'estensione d'anca.</li>
+        <li><strong>Inchworm con estensione toracica</strong> (50s): camminata sulle mani per allungare i femorali e attivare spalle e core.</li>
+        <li><strong>Affondi posteriori alternati a corpo libero</strong> (50s): preparazione del pattern di spinta per i Bulgarian Split Squats.</li>
+        <li><strong>Slanci d'anca quadrupedici / Donkey Kicks</strong> (50s): 25s per gamba per isolare e accendere i glutei.</li>
+        <li><strong>Cossack Squats alternati / Slanci laterali</strong> (50s): mobilità degli adduttori e preparazione laterale per gli Skier Jumps.</li>
+      </ol>`,
       timers: [
-        { sec: 300, label: "Riscaldamento (5 min)", type: "work" }
+        { sec: 50, label: "1. Air Squat Pausa", type: "work" },
+        { sec: 50, label: "2. Glute Bridge", type: "work" },
+        { sec: 50, label: "3. Inchworm", type: "work" },
+        { sec: 50, label: "4. Affondi Post.", type: "work" },
+        { sec: 50, label: "5. Donkey Kicks ", type: "work" },
+        { sec: 50, label: "6. Cossack Squat", type: "work" }
       ]
     },
     exercises: [
@@ -329,9 +377,22 @@ const program = [
     title: "🟡 Giorno 3: Agilità Specifica del Centrale & Rincorsa Breve",
     goal: "Unisce i movimenti reali del tuo ruolo in campo con la pliometria ad alta intensità.",
     warmup: {
-      text: "Rotazioni delle caviglie, delle ginocchia e simulazione di passi di accostamento a muro a vuoto.",
+      text: `<strong>Agilità Dinamica, Spostamenti Muro & Reattività Caviglie (5 min):</strong>
+      <ol style="margin-top:8px; margin-bottom:8px; padding-left:20px;">
+        <li><strong>Rotazioni caviglie + Piede su punta/tallone</strong> (50s): mobilità articolare e vascolarizzazione del polpaccio.</li>
+        <li><strong>Shuffle laterale a specchio (basso impatto)</strong> (50s): scivolamenti brevi a destra e sinistra mantenendo il baricentro basso.</li>
+        <li><strong>Passi di accostamento a muro a secco</strong> (50s): simulazione dei passi di chiusura verso banda con caricamento d'arresto.</li>
+        <li><strong>Aperture e chiusure braccia dinamiche (Muro alto)</strong> (50s): estensioni rapide in alto e indietro per sbloccare spalle e scapole.</li>
+        <li><strong>High Knees controllati + Drop rapido</strong> (50s): 3 secondi di ginocchia alte sul posto seguiti da un arresto rapido in mezzo squat.</li>
+        <li><strong>Affondi laterali dinamici alternati</strong> (50s): allungamento attivo adduttori e preparazione agli affondi laterali della scheda.</li>
+      </ol>`,
       timers: [
-        { sec: 300, label: "Riscaldamento (5 min)", type: "work" }
+        { sec: 50, label: "1. Mobilità Caviglie", type: "work" },
+        { sec: 50, label: "2. Shuffle Laterale", type: "work" },
+        { sec: 50, label: "3. Passi Accostamento", type: "work" },
+        { sec: 50, label: "4. Estensione Braccia", type: "work" },
+        { sec: 50, label: "5. High Knees Drop", type: "work" },
+        { sec: 50, label: "6. Affondi Dinamici", type: "work" }
       ]
     },
     exercises: [
@@ -480,7 +541,7 @@ function render() {
         <h3 class="ex-title">🔥 Riscaldamento</h3>
       </div>
       <div class="ex-desc" style="margin-bottom:8px">${day.warmup.text}</div>
-      <div class="timer-triggers">${warmupTimers}</div>
+      <div class="warmup-timer-grid">${warmupTimers}</div>
     </div>
   `;
 
